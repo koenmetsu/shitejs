@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "baseUrl": "./src/Dienstverlening.UI/app/",
+    "paths": {
+      "app/*": ["./src/Dienstverlening.UI/app/*"],
+      "core/*": ["./src/Dienstverlening.UI/app/core/*"]
+    }
+  },
+  "include": [
+      "./src/Dienstverlening.UI/app/**/*"
+  ],
+  "exclude": [
+    "dist",
+    "node_modules"
+  ]
+}

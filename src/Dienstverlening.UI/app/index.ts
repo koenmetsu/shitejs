@@ -4,6 +4,6 @@ import Hello from './Hello.vue';
 Vue.config.productionTip = false;
 
 new Vue({
-  el: '#app',
+  el: '#dienstverlening',
   render: h => h(Hello)
 });

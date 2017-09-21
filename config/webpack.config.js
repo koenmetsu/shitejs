@@ -2,7 +2,6 @@ const {
   createConfig,
 
   // Feature blocks
-  webpack,
   devServer,
   uglify,
 
@@ -17,6 +16,7 @@ const {
   env
 } = require('webpack-blocks');
 
+const webpack = require('webpack');
 const ts = require('webpack-blocks-ts');
 const vue = require('webpack-blocks-vue');
 const autoprefixer = require('autoprefixer');
@@ -28,8 +28,8 @@ const htmlWebpack = require('./html-webpack.block');
 module.exports = createConfig([
   defineConstants({ 'process.env.NODE_ENV': process.env.NODE_ENV || 'development' }),
 
-  entryPoint('./src'),
-  setOutput('./build/bundle-[hash].js'),
+  entryPoint('./src/Dienstverlening.UI/app'),
+  setOutput('./src/Dienstverlening.UI/wwwroot/bundle-[hash].js'),
 
   progressbar(),
   htmlWebpack(),

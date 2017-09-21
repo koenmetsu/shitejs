@@ -6,7 +6,7 @@ function htmlWebpack () {
   var plugins = [
     new HtmlWebpackPlugin({
       inject: true,
-      template: './index.html'
+      template: './src/Dienstverlening.UI/index.html'
     }),
   ];
 
