@@ -1,0 +1,17 @@
+{
+  "name": "shitejs",
+  "version": "0.1.0",
+  "scripts": {
+    "build": "NODE_ENV=production webpack --config webpack.config.babel.js",
+    "start": "NODE_ENV=development webpack-dev-server --config webpack.config.babel.js"
+  },
+  "engines": {
+    "node": ">= 6.0"
+  },
+  "devDependencies": {
+    "webpack": "3.6.0",
+    "webpack-blocks": "1.0.0-beta.4",
+    "webpack-dev-server": "2.8.2",
+    "html-webpack-plugin": "2.30.1"
+  }
+}
