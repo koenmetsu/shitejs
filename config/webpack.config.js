@@ -27,21 +27,18 @@ const htmlWebpack = require('./html-webpack.block');
 
 module.exports = createConfig([
   defineConstants({ 'process.env.NODE_ENV': process.env.NODE_ENV || 'development' }),
-
   entryPoint('./src/Dienstverlening.UI/app'),
-  setOutput('./src/Dienstverlening.UI/wwwroot/bundle-[hash].js'),
-
   progressbar(),
   htmlWebpack(),
-  extractText(),
-  ts({ appendTsSuffixTo: [/\.vue$/], logLevel: 'warn' }),
-  tslint(),
 
   vue({
     esModule: true,
     postcss: [autoprefixer()],
-    extractCSS: true
+    extractCSS: process.env.NODE_ENV == 'production'
   }),
+
+  ts({ appendTsSuffixTo: [/\.vue$/], logLevel: 'warn' }),
+  tslint(),
 
   env('development', [
     devServer({ overlay: true }),
@@ -49,7 +46,9 @@ module.exports = createConfig([
   ]),
 
   env('production', [
+    setOutput('./src/Dienstverlening.UI/wwwroot/bundle-[hash].js'),
     uglify(),
+    extractText(),
     addPlugins([
       new webpack.LoaderOptionsPlugin({
         minimize: true,
