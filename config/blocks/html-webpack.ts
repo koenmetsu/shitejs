@@ -1,8 +1,6 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+import * as HtmlWebpackPlugin from 'html-webpack-plugin';
 
-module.exports = htmlWebpack;
-
-function htmlWebpack () {
+export default function htmlWebpack () {
   var plugins = [
     new HtmlWebpackPlugin({
       inject: true,
@@ -16,5 +14,5 @@ function htmlWebpack () {
     }),
   ];
 
-  return (context, util) => util.merge({ plugins });
+  return (context: any, util: any) => util.merge({ plugins });
 };

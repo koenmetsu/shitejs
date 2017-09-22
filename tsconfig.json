@@ -5,9 +5,17 @@
       "dom",
       "es5",
       "es2015",
-      "es2015.promise"
+      "es2015.promise",
+      "es2016.array.include"
     ],
-    "types": ["vue-typescript-import-dts"],
+    "types": [
+      "vue-typescript-import-dts",
+      "node",
+      "webpack"
+    ],
+    "typeRoots": [
+      "node_modules/@types"
+    ],
     "sourceMap": true,
     "strict": true,
     "module": "es2015",

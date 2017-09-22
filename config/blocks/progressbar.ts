@@ -1,9 +1,8 @@
+import * as chalk from 'chalk';
+
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
-const chalk = require('chalk');
 
-module.exports = progressbar;
-
-function progressbar () {
+export default function progressbar () {
   var plugins = [
     new ProgressBarPlugin({
       format: chalk.cyan.bold('  build ') + chalk.yellow.bold('[:bar]') + chalk.green.bold(' :percent') + ' (:elapsed seconds)',
@@ -11,5 +10,5 @@ function progressbar () {
     })
   ];
 
-  return (context, util) => util.merge({ plugins });
+  return (context: any, util: any) => util.merge({ plugins });
 };

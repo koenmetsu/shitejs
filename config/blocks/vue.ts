@@ -6,32 +6,32 @@
 
 const CSS_EXTS = ['css', 'scss', 'less', 'sass', 'stylus'];
 
-function preHook(context) {
+function preHook(context: any) {
   const types = context.fileType.all();
   if ('application/x-vue' in types) {
     return;
   }
   context.fileType.add('application/x-vue', /\.vue$/);
-}
+};
 
-function extract(loader) {
+function extract(loader: any) {
   return require('extract-text-webpack-plugin').extract({
     use: loader,
     fallback: 'vue-style-loader'
   });
-}
+};
 
-function vue(options) {
+export default function vue(options: any) {
   const {
     exclude = /\/node_modules\//,
-    extractCSS = false,
+    extractCSS = false
   } = options || {};
 
   const opts = (opts => {
     Object.keys(options || {})
       .filter(k => !['exlude', 'extractCSS'].includes(k))
       .forEach(k => opts[k] = options[k]);
-    return opts;
+    return (opts as any);
   })({});
 
   const extraOptions = () => {
@@ -41,20 +41,20 @@ function vue(options) {
     if (foundCSS.length) {
       foundCSS.forEach(ext => {
         if (ext in opts.loaders) {
-          const loader = opts.loaders[ext]
+          const loader = opts.loaders[ext];
           if (extractCSS) {
-            opts.loaders[ext] = extract(loader)
+            opts.loaders[ext] = extract(loader);
           } else {
-            opts.loaders[ext] = 'vue-style-loader!' + opts.loaders[ext]
+            opts.loaders[ext] = 'vue-style-loader!' + opts.loaders[ext];
           }
         }
       });
     }
 
     return opts;
-  }
+  };
 
-  const vueBlock = (context, {addLoader}) => addLoader({
+  const vueBlock = (context: any, {addLoader}: any) => addLoader({
     test: context.fileType('application/x-vue'),
     exclude: Array.isArray(exclude) ? exclude : [ exclude ],
     loader: 'vue-loader',
@@ -64,6 +64,4 @@ function vue(options) {
   return Object.assign(vueBlock, {
     pre: preHook
   });
-}
-
-module.exports = vue;
+};
