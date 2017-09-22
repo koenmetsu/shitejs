@@ -22,9 +22,9 @@ const {
 
 const webpack = require('webpack');
 const ts = require('webpack-blocks-ts');
-// const vue = require('webpack-blocks-vue');
-const vue = require('./vue.block');
 const autoprefixer = require('autoprefixer');
+
+const vue = require('./vue.block');
 const tslint = require('./tslint.block');
 const progressbar = require('./progressbar.block');
 const extractText = require('./extract-text.block');
