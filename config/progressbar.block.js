@@ -1,7 +1,7 @@
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const chalk = require('chalk');
 
-module.exports = progressbar
+module.exports = progressbar;
 
 function progressbar () {
   var plugins = [

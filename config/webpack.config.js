@@ -14,12 +14,14 @@ const {
   addPlugins,
   defineConstants,
   sourceMaps,
+  resolve,
 
   // Helpers
   env,
   match
 } = require('webpack-blocks');
 
+const path = require('path');
 const webpack = require('webpack');
 const ts = require('webpack-blocks-ts');
 const autoprefixer = require('autoprefixer');
@@ -29,11 +31,13 @@ const tslint = require('./tslint.block');
 const progressbar = require('./progressbar.block');
 const extractText = require('./extract-text.block');
 const htmlWebpack = require('./html-webpack.block');
+const friendlyErrors = require('./friendly-errors.block');
 
 module.exports = createConfig([
   defineConstants({ 'process.env.NODE_ENV': process.env.NODE_ENV || 'development' }),
   entryPoint('./src/Dienstverlening.UI/app'),
   progressbar(),
+  friendlyErrors(),
   htmlWebpack(),
   sass({ minimize: process.env.NODE_ENV == 'production' }),
 
@@ -45,6 +49,14 @@ module.exports = createConfig([
     // will load images up to 10KB as data URL
     url({ limit: 10000 })
   ]),
+
+  resolve({
+    extensions: ['.vue', '.ts', '.js', 'json'],
+    alias: {
+      'app':path. resolve(__dirname, 'src/Dienstverlening.UI/app'),
+      'core': path.resolve(__dirname, 'src/Dienstverlening.UI/app/core'),
+    }
+  }),
 
   vue({
     esModule: true,
