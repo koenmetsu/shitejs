@@ -41,14 +41,8 @@ module.exports = createConfig([
   htmlWebpack(),
   sass({ minimize: process.env.NODE_ENV == 'production' }),
 
-  match(['*.eot', '*.ttf', '*.woff', '*.woff2'], [
-    // will copy font files to build directory and link to them
-    file()
-  ]),
-  match(['*.gif', '*.jpg', '*.jpeg', '*.png', '*.svg', '*.webp'], [
-    // will load images up to 10KB as data URL
-    url({ limit: 10000 })
-  ]),
+  match(['*.eot', '*.ttf', '*.woff', '*.woff2'], [ file() ]),
+  match(['*.gif', '*.jpg', '*.jpeg', '*.png', '*.svg', '*.webp'], [ url({ limit: 10000 }) ]),
 
   resolve({
     extensions: ['.vue', '.ts', '.js', 'json'],
@@ -66,6 +60,12 @@ module.exports = createConfig([
       css: 'css-loader?sourceMap',
       scss: 'css-loader?sourceMap!sass-loader?sourceMap',
       sass: 'css-loader?sourceMap!sass-loader?indentedSyntax&sourceMap'
+    },
+    transformToRequire: {
+      video: 'src',
+      source: 'src',
+      img: 'src',
+      image: 'xlink:href'
     }
   }),
 
