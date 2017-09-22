@@ -1,7 +1,10 @@
 <template>
   <div class="hello">
+    <img src="../static/icon/favicon-194x194.png">
+
     <p>Hello, {{ name || 'World' }}!</p>
     <input v-model="name">
+    {{ count }}
   </div>
 </template>
 
@@ -11,8 +14,24 @@ import Component from 'vue-class-component';
 
 @Component({})
 export default class Hello extends Vue {
+  private handle: number;
+  private count: number = 0;
+
   data() {
-    return { name: 'World' };
+    return {
+      name: 'World',
+      count: 0
+    };
+  }
+
+  mounted() {
+    this.handle = setInterval(() => {
+      this.count++;
+    }, 1000);
+  }
+
+  destroyed() {
+    clearInterval(this.handle);
   }
 }
 </script>

@@ -5,6 +5,8 @@ const {
   devServer,
   uglify,
   sass,
+  file,
+  url,
 
   // Shorthand setters
   entryPoint,
@@ -14,7 +16,8 @@ const {
   sourceMaps,
 
   // Helpers
-  env
+  env,
+  match
 } = require('webpack-blocks');
 
 const webpack = require('webpack');
@@ -33,6 +36,15 @@ module.exports = createConfig([
   progressbar(),
   htmlWebpack(),
   sass({ minimize: process.env.NODE_ENV == 'production' }),
+
+  match(['*.eot', '*.ttf', '*.woff', '*.woff2'], [
+    // will copy font files to build directory and link to them
+    file()
+  ]),
+  match(['*.gif', '*.jpg', '*.jpeg', '*.png', '*.svg', '*.webp'], [
+    // will load images up to 10KB as data URL
+    url({ limit: 10000 })
+  ]),
 
   vue({
     esModule: true,
