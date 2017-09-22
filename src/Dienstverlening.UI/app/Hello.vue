@@ -17,9 +17,18 @@ export default class Hello extends Vue {
 }
 </script>
 
-<style scoped>
-  .hello {
-    font-size: 20px;
-    font-family: sans-serif;
+<style scoped lang="scss">
+  $font-stack: Helvetica, sans-serif;
+  $base-size: 16px;
+
+  div.hello {
+    p {
+      font-size: $base-size * 1.5;
+      font-family: $font-stack;
+    }
+
+    input {
+      background-color: #333;
+    }
   }
 </style>

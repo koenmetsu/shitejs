@@ -1,5 +1,15 @@
+/**
+ * Tslint webpack block.
+ *
+ * @see https://github.com/wbuchwalter/tslint-loader
+ */
+
 module.exports = tslint
 
+/**
+ * @param {object}   [options]                  See https://github.com/wbuchwalter/tslint-loader#usage
+ * @return {Function}
+ */
 function tslint (options = {}) {
   return (context, util) => prevConfig => {
     let nextConfig = util.addLoader(
@@ -8,7 +18,7 @@ function tslint (options = {}) {
         use: [ 'tslint-loader' ],
         enforce: 'pre'
       }, context.match)
-    )(prevConfig);
+    )(prevConfig)
 
     nextConfig = util.addPlugin(
       new context.webpack.LoaderOptionsPlugin({
@@ -16,8 +26,8 @@ function tslint (options = {}) {
           tslint: options
         }
       })
-    )(nextConfig);
+    )(nextConfig)
 
-    return nextConfig;
-  };
-};
+    return nextConfig
+  }
+}

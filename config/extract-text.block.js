@@ -2,10 +2,10 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = extractText
 
-function extractText () {
+function extractText (outputFilePattern = 'css/[name].[contenthash:8].css') {
   var plugins = [
     new ExtractTextPlugin({
-      filename: 'bundle-[sha1:contenthash:hex:20].css',
+      filename: outputFilePattern,
       allChunks: true
     })
   ];
