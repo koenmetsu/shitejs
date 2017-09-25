@@ -24,6 +24,7 @@ const {
 import devServer from './blocks/dev-server';
 import uglify from './blocks/uglify';
 import scss from './blocks/scss';
+import clean from './blocks/clean';
 import ts from './blocks/ts';
 import vue from './blocks/vue';
 import tslint from './blocks/tslint';
@@ -40,6 +41,7 @@ export default createConfig([
   entryPoint(config.entryPoint),
   progressbar(),
   friendlyErrors(),
+  clean(path.join(config.assetsRoot, config.assetsSubDirectory)),
   htmlWebpack(config.indexTemplate, config.index),
   scss({ minimize: isProduction }),
 
