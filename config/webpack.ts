@@ -73,7 +73,7 @@ export default createConfig([
 
   ts({ appendTsSuffixTo: [/\.vue$/], logLevel: 'warn' }),
   tslint(),
-  sourceMaps(),
+  sourceMaps('source-map'),
 
   env('development', [
     devServer({ overlay: true })

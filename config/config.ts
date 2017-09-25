@@ -8,10 +8,12 @@ export const isProduction = process.env.NODE_ENV === 'production';
 export default {
   projectRoot: projectRoot,
   indexTemplate: path.join(projectRoot, 'index.html'),
-  entryPoint: path.join(projectRoot, 'app'),
+  entryPoint: {
+    dienstverlening: path.join(projectRoot, 'app')
+  },
 
-  output: path.join(wwwRoot, 'bundle-[hash].js'),
-  cssOutputName: `bundle-[contenthash:20].css`,
+  output: path.join(wwwRoot, '[name].[hash].js'),
+  cssOutputName: `[name].[contenthash:20].css`,
 
   wwwRoot: wwwRoot,
   index: isProduction ? path.join(wwwRoot, 'index.html') : 'index.html',
