@@ -7,9 +7,7 @@ export default function friendlyErrors () {
   var plugins = [
     new FriendlyErrorsWebpackPlugin({
       compilationSuccessInfo: {
-        messages: [chalk.cyan(
-          'Build complete.\n' +
-          '    Application running at http://localhost:' + config.port + '\n')],
+        messages: [chalk.cyan('Build complete.\n')],
         notes: [chalk.yellow(
           'Tip: built files are meant to be served over an HTTP server.\n' +
           '    Opening index.html over file:// won\'t work.\n\n')]

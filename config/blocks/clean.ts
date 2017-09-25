@@ -14,7 +14,7 @@ export default function clean (pathsToClean: string | string[]) {
 
   var plugins = [
     new CleanWebpackPlugin(paths, {
-      root: config.wwwroot,
+      root: config.wwwRoot,
       verbose: false
     })
   ];

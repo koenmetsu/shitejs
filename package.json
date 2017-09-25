@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "scripts": {
     "build": "cross-env TS_NODE_COMPILER_OPTIONS={\\\"module\\\":\\\"commonjs\\\"} NODE_ENV=production webpack --config config/webpack.ts",
-    "start": "cross-env TS_NODE_COMPILER_OPTIONS={\\\"module\\\":\\\"commonjs\\\"} NODE_ENV=development webpack-dev-server --config config/webpack.ts"
+    "start": "cross-env TS_NODE_COMPILER_OPTIONS={\\\"module\\\":\\\"commonjs\\\"} NODE_ENV=development webpack-dev-server --port 1337 --config config/webpack.ts"
   },
   "engines": {
     "node": ">= 6.0"

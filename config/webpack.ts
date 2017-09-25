@@ -1,4 +1,4 @@
-import config from './config';
+import config, { isProduction } from './config';
 
 import * as webpack from 'webpack';
 import * as path from 'path';
@@ -33,14 +33,13 @@ import extractText from './blocks/extract-text';
 import htmlWebpack from './blocks/html-webpack';
 import friendlyErrors from './blocks/friendly-errors';
 
-const isProduction = process.env.NODE_ENV === 'production';
 const environment = isProduction ? 'production' : 'development';
 
 export default createConfig([
   defineConstants({ 'process.env.NODE_ENV': environment }),
   entryPoint(config.entryPoint),
   progressbar(),
-  //friendlyErrors(),
+  friendlyErrors(),
   clean(path.join(config.assetsRoot, config.assetsSubDirectory)),
   htmlWebpack(config.indexTemplate, config.index),
   scss({ minimize: isProduction }),

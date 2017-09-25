@@ -7,10 +7,9 @@ export default function htmlWebpack (template: string, filename: string) {
       template: template,
       filename: filename,
       minify: {
-        removeComments: true, // process.env.NODE_ENV == 'production'
-        collapseWhitespace: true, // process.env.NODE_ENV == 'production'
-        removeAttributeQuotes: true // process.env.NODE_ENV == 'production'
-        // more options: https://github.com/kangax/html-minifier#options-quick-reference
+        removeComments: true,
+        collapseWhitespace: true,
+        removeAttributeQuotes: true,
       },
       // necessary to consistently work with multiple chunks via CommonsChunkPlugin
       chunksSortMode: 'dependency'
