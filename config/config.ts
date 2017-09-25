@@ -1,19 +1,23 @@
 import * as path from 'path';
 
+const projectRoot = path.resolve(__dirname, '../src/Dienstverlening.UI');
+const wwwRoot = path.join(projectRoot, 'wwwroot');
+
 export default {
-  entryPoint: './src/Dienstverlening.UI/app',
-  output: './src/Dienstverlening.UI/wwwroot/bundle-[hash].js',
-  cssOutputName: 'bundle-[contenthash:20].css',
+  entryPoint: path.join(projectRoot, 'app'),
+  output: path.join(wwwRoot, 'bundle-[hash].js'),
+  cssOutputName: `bundle-[contenthash:20].css`,
 
-  indexTemplate: './src/Dienstverlening.UI/index.html',
+  indexTemplate: path.join(projectRoot, 'index.html'),
 
-  index: path.resolve(__dirname, '../src/Dienstverlening.UI/wwwroot/index.html'),
-  assetsRoot: path.resolve(__dirname, '../src/Dienstverlening.UI/wwwroot'),
+  wwwroot: wwwRoot,
+  index: path.join(wwwRoot, 'index.html'),
+  assetsRoot: wwwRoot,
   assetsSubDirectory: 'static',
 
   aliases: {
-    'app': path.resolve(__dirname, 'src/Dienstverlening.UI/app'),
-    'core': path.resolve(__dirname, 'src/Dienstverlening.UI/app/core'),
+    'app': path.join(projectRoot, 'app'),
+    'core': path.join(projectRoot, 'app/core'),
   },
 
   port: 1337
