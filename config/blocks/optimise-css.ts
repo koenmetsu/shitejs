@@ -1,6 +1,8 @@
 import * as OptimizeCssAssetsPlugin from 'optimize-css-assets-webpack-plugin';
 
-export default function optimiseCSS () {
+export default function optimiseCSS (options: any = {}) {
+  const sourceMap = Boolean(options.sourceMap);
+
   var plugins = [
     new OptimizeCssAssetsPlugin({
       cssProcessorOptions: {
@@ -8,7 +10,7 @@ export default function optimiseCSS () {
         discardComments: {
           removeAll: true
         },
-        map: { inline: false }
+        map: sourceMap ? { inline: false } : false
       },
       canPrint: true,
     }),

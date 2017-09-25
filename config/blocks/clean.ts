@@ -15,7 +15,7 @@ export default function clean (pathsToClean: string | string[]) {
   var plugins = [
     new CleanWebpackPlugin(paths, {
       root: config.projectRoot,
-      verbose: true
+      verbose: false
     })
   ];
 

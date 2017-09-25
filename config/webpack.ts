@@ -44,7 +44,7 @@ export default createConfig([
   clean(config.wwwRoot),
   clean(path.join(config.wwwRoot, config.assetsDirectory)),
   htmlWebpack(config.indexTemplate, config.index),
-  scss({ minimize: isProduction }),
+  scss({ minimize: isProduction, sourceMap: true }),
 
   match(['*.eot', '*.ttf', '*.woff', '*.woff2'], [ file() ]),
   match(['*.gif', '*.jpg', '*.jpeg', '*.png', '*.svg', '*.webp'], [ url({ limit: 10000 }) ]),
@@ -81,9 +81,9 @@ export default createConfig([
 
   env('production', [
     setOutput(config.output),
-    uglify(),
+    uglify({ sourceMap: true }),
     extractText(config.cssOutputName),
-    optimiseCSS(),
+    optimiseCSS({ sourceMap: true }),
     addPlugins([
       new webpack.LoaderOptionsPlugin({
         minimize: true,

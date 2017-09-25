@@ -18,8 +18,7 @@ export default function uglify (options = {}) {
     uglifyOptions: {
       compress: {
         warnings: false
-      },
-      sourceMap: true
+      }
     }
   }, options);
 
