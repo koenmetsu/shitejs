@@ -40,7 +40,7 @@ export default createConfig([
   entryPoint(config.entryPoint),
   progressbar(),
   friendlyErrors(),
-  htmlWebpack(),
+  htmlWebpack(config.indexTemplate, config.index),
   scss({ minimize: isProduction }),
 
   match(['*.eot', '*.ttf', '*.woff', '*.woff2'], [ file() ]),
