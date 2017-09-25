@@ -40,7 +40,7 @@ export default createConfig([
   defineConstants({ 'process.env.NODE_ENV': environment }),
   entryPoint(config.entryPoint),
   progressbar(),
-  friendlyErrors(),
+  //friendlyErrors(),
   clean(path.join(config.assetsRoot, config.assetsSubDirectory)),
   htmlWebpack(config.indexTemplate, config.index),
   scss({ minimize: isProduction }),
