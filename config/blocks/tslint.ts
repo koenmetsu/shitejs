@@ -8,7 +8,7 @@
  * @param {object}   [options]                  See https://github.com/wbuchwalter/tslint-loader#usage
  * @return {Function}
  */
-export default function tslint (options = {}) {
+export default function tslint(options = {}) {
   return (context: any, util: any) => (prevConfig: any) => {
     let nextConfig = util.addLoader(
       Object.assign({

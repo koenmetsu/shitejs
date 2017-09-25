@@ -3,7 +3,7 @@ import config from './../config';
 
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
-export default function clean (pathsToClean: string | string[]) {
+export default function clean(pathsToClean: string | string[]) {
   let paths: string[] = [];
 
   if (typeof pathsToClean === 'string') {

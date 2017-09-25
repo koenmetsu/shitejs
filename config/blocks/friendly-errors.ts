@@ -1,9 +1,8 @@
-import * as FriendlyErrorsWebpackPlugin from 'friendly-errors-webpack-plugin';
-import * as chalk from 'chalk';
-
 import config from './../config';
+import * as chalk from 'chalk';
+import * as FriendlyErrorsWebpackPlugin from 'friendly-errors-webpack-plugin';
 
-export default function friendlyErrors () {
+export default function friendlyErrors() {
   var plugins = [
     new FriendlyErrorsWebpackPlugin({
       compilationSuccessInfo: {

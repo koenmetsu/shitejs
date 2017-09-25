@@ -15,7 +15,7 @@ import * as _ from 'lodash';
  * @param {bool}     [options.sourceMap]
  * @return {Function}
  */
-export default function scss (options: any = {}) {
+export default function scss(options: any = {}) {
   const sassOptions = _.omit(options, 'minimize');
 
   return (context: any, util: any) => util.addLoader(

@@ -1,6 +1,6 @@
 import * as ExtractTextPlugin from 'extract-text-webpack-plugin';
 
-export default function extractText (outputFilePattern = 'css/[name].[contenthash:8].css') {
+export default function extractText(outputFilePattern = 'css/[name].[contenthash:8].css') {
   var plugins = [
     new ExtractTextPlugin({
       filename: outputFilePattern,

@@ -14,7 +14,7 @@
  * @param {string|string[]} [entry]
  * @return {Function}
  */
-export default function devServer (options = {}, entry: string | string[] = []) {
+export default function devServer(options = {}, entry: string | string[] = []) {
   if (options && (typeof options === 'string' || Array.isArray(options))) {
     entry = options;
     options = {};

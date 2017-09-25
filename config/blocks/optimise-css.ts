@@ -1,6 +1,6 @@
 import * as OptimizeCssAssetsPlugin from 'optimize-css-assets-webpack-plugin';
 
-export default function optimiseCSS (options: any = {}) {
+export default function optimiseCSS(options: any = {}) {
   const sourceMap = Boolean(options.sourceMap);
 
   var plugins = [

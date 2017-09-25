@@ -10,7 +10,7 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
  * @param {object} [options] UglifyJS options
  * @return {Function}
  */
-export default function uglify (options = {}) {
+export default function uglify(options = {}) {
   options = Object.assign({
     parallel: {
       cache: true

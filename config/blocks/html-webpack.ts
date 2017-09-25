@@ -1,6 +1,6 @@
 import * as HtmlWebpackPlugin from 'html-webpack-plugin';
 
-export default function htmlWebpack (template: string, filename: string) {
+export default function htmlWebpack(template: string, filename: string) {
   var plugins = [
     new HtmlWebpackPlugin({
       inject: true,

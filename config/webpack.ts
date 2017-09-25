@@ -26,6 +26,7 @@ import uglify from './blocks/uglify';
 import scss from './blocks/scss';
 import optimiseCSS from './blocks/optimise-css'
 import clean from './blocks/clean';
+import copy from './blocks/copy';
 import ts from './blocks/ts';
 import vue from './blocks/vue';
 import tslint from './blocks/tslint';
@@ -75,6 +76,8 @@ export default createConfig([
   tslint(),
   sourceMaps('source-map'),
 
+  copy(path.join(config.projectRoot, config.assetsDirectory), config.assetsDirectory),
+
   env('development', [
     devServer({ overlay: true })
   ]),
@@ -84,11 +87,37 @@ export default createConfig([
     uglify({ sourceMap: true }),
     extractText(config.cssOutputName),
     optimiseCSS({ sourceMap: true }),
+
     addPlugins([
       new webpack.LoaderOptionsPlugin({
         minimize: true,
         debug: false,
-      })
+      }),
+
+      // keep module.id stable when vender modules does not change
+      new webpack.HashedModuleIdsPlugin(),
+
+      // split vendor js into its own file
+      new webpack.optimize.CommonsChunkPlugin({
+        name: 'vendor',
+        minChunks: function (module, count) {
+          // any required modules inside node_modules are extracted to vendor
+          return (
+            module.resource &&
+            /\.js$/.test(module.resource) &&
+            module.resource.indexOf(
+              path.join(__dirname, '../node_modules')
+            ) === 0
+          )
+        }
+      }),
+
+      // extract webpack runtime and module manifest to its own file in order to
+      // prevent vendor hash from being updated whenever app bundle is updated
+      new webpack.optimize.CommonsChunkPlugin({
+        name: 'manifest',
+        chunks: ['vendor']
+      }),
     ])
   ])
 ]);
