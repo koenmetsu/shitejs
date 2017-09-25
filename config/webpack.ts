@@ -24,6 +24,7 @@ const {
 import devServer from './blocks/dev-server';
 import uglify from './blocks/uglify';
 import scss from './blocks/scss';
+import optimiseCSS from './blocks/optimise-css'
 import clean from './blocks/clean';
 import ts from './blocks/ts';
 import vue from './blocks/vue';
@@ -40,7 +41,8 @@ export default createConfig([
   entryPoint(config.entryPoint),
   progressbar(),
   friendlyErrors(),
-  clean(path.join(config.assetsRoot, config.assetsSubDirectory)),
+  clean(config.wwwRoot),
+  clean(path.join(config.wwwRoot, config.assetsDirectory)),
   htmlWebpack(config.indexTemplate, config.index),
   scss({ minimize: isProduction }),
 
@@ -81,6 +83,7 @@ export default createConfig([
     setOutput(config.output),
     uglify(),
     extractText(config.cssOutputName),
+    optimiseCSS(),
     addPlugins([
       new webpack.LoaderOptionsPlugin({
         minimize: true,
