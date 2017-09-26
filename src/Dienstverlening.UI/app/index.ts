@@ -1,4 +1,5 @@
 import Vue from 'vue';
+import router from './router';
 import App from './App.vue';
 
 Vue.config.productionTip = false;
@@ -20,6 +21,7 @@ const components = {
 Object.keys(components).forEach(key => Vue.component(key, components[key]));
 
 new Vue({
+  router,
   el: '#dienstverlening',
   render: h => h(App),
 });
