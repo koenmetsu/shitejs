@@ -27,6 +27,7 @@
     "noImplicitThis": true,
     "strictNullChecks": true,
     "noEmitHelpers": true,
+    "importHelpers": true,
     "removeComments": true,
     "suppressImplicitAnyIndexErrors": true,
     "allowSyntheticDefaultImports": true,

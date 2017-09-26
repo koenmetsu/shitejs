@@ -1,33 +1,33 @@
 <template>
   <div>
-    <dienstverlening-header />
-    <dienstverlening-navigation />
+    <dv-header />
+    <dv-navigation />
 
-    <div id="main" itemprop="mainContentOfPage" role="main" tabindex="-1" class="main-content">
+    <dv-main>
       <div class="region">
         <div class="layout layout--wide">
           <router-view></router-view>
         </div>
       </div>
-    </div>
+    </dv-main>
 
-    <dienstverlening-footer />
+    <dv-footer />
   </div>
 </template>
 
 <script lang="ts">
-import dienstverleningHeader from 'components/header/Header.vue';
-import dienstverleningNavigation from 'components/navigation/Navigation.vue';
-import dienstverleningFooter from 'components/footer/Footer.vue';
+import dvHeader from 'components/header/Header.vue';
+import dvNavigation from 'components/navigation/Navigation.vue';
+import dvFooter from 'components/footer/Footer.vue';
 
 import Vue from 'vue';
 import Component from 'vue-class-component';
 
 @Component({
   components: {
-    dienstverleningHeader,
-    dienstverleningNavigation,
-    dienstverleningFooter,
+    dvHeader,
+    dvNavigation,
+    dvFooter,
   }
 })
 export default class Dienstverlening extends Vue {
