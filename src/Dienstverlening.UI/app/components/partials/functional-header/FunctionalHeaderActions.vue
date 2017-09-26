@@ -33,10 +33,6 @@ export default class FunctionalHeaderActions extends Vue {
       text-decoration: underline;
   }
 
-  /* .functional-header__menu--open .functional-header__menu__toggle:before, .js-scrollspy__close:before, .link--icon--close:before, .pill__close:before, .tabs__toggle[data-close=true]:before, .taggle_list .taggle .close:before, .vi-cross:before {
-    content: "\E00F";
-  } */
-
   @media screen and (max-width: 767px) {
     .functional-header__actions {
       margin-top: -0.9rem;
@@ -49,10 +45,10 @@ export default class FunctionalHeaderActions extends Vue {
 
   @media screen and (max-width: 580px) {
     .functional-header__actions {
-        float: left;
-        width: 100%;
-        margin-bottom: 10px;
-        margin-top: -5px;
+      float: left;
+      width: 100%;
+      margin-bottom: 10px;
+      margin-top: -5px;
     }
   }
 </style>

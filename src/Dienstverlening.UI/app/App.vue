@@ -23,14 +23,10 @@
       </dv-functional-header-sub>
     </dv-functional-header>
 
-    <dv-navigation />
-
     <dv-main>
       <dv-region>
         <dv-layout :mod-is-wide="true">
-
           <router-view></router-view>
-
         </dv-layout>
       </dv-region>
     </dv-main>
@@ -45,30 +41,26 @@ import { Component } from 'vue-property-decorator';
 
 import dvMain from 'components/frame/main/Main.vue';
 import dvRegion from 'components/frame/region/Region.vue';
+import dvHeader from 'components/partials/header/Header.vue';
 import dvFunctionalHeader from 'components/partials/functional-header/FunctionalHeader.vue';
 import dvFunctionalHeaderContent from 'components/partials/functional-header/FunctionalHeaderContent.vue';
 import dvFunctionalHeaderSub from 'components/partials/functional-header/FunctionalHeaderSub.vue';
 import dvFunctionalHeaderActions from 'components/partials/functional-header/FunctionalHeaderActions.vue';
 import dvTabs from 'components/navigations/tabs/Tabs.vue';
 import dvTab from 'components/navigations/tabs/Tab.vue';
-
-import dvHeader from 'components/header/Header.vue';
-import dvNavigation from 'components/navigation/Navigation.vue';
-import dvFooter from 'components/footer/Footer.vue';
+import dvFooter from 'components/partials/footer/Footer.vue';
 
 @Component({
   components: {
     dvMain,
     dvRegion,
+    dvHeader,
     dvFunctionalHeader,
     dvFunctionalHeaderContent,
     dvFunctionalHeaderSub,
     dvFunctionalHeaderActions,
     dvTabs,
     dvTab,
-
-    dvHeader,
-    dvNavigation,
     dvFooter,
   }
 })

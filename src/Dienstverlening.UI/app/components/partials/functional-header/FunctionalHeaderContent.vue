@@ -1,6 +1,6 @@
 <template>
   <div class="functional-header__content">
-    <h1 class="functional-header__title">{{ title }}</h1>
+    <h1 class="functional-header__title"><a class="functional-header__title" href="/">{{ title }}</a></h1>
   </div>
 </template>
 

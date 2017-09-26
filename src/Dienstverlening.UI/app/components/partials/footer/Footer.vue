@@ -37,6 +37,7 @@ export default class Footer extends Vue {
   }
 
   setVersion() {
+    // TODO: Get version
     //document.getElementById('version').innerHTML = `, versie ${window.dienstverleningVersion}`;
   }
 }
@@ -44,7 +45,6 @@ export default class Footer extends Vue {
 
 <style scoped>
   footer {
-    /*position: static !important;*/
     display: block;
     font-family: flanders-sans;
 
