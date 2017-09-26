@@ -4,7 +4,9 @@
 
     <dv-functional-header :mod-has-actions="true">
       <dv-functional-header-actions :actions="actions" />
-      <dv-functional-header-content :title="title" />
+      <dv-functional-header-content>
+        <router-link slot="title" class="functional-header__title" :to="{ name: 'all-services' }">{{ title }}</router-link>
+      </dv-functional-header-content>
       <dv-functional-header-sub>
         <dv-grid>
           <dv-column type="nav"

@@ -1,6 +1,9 @@
 <template>
   <div class="functional-header__content">
-    <h1 class="functional-header__title"><a class="functional-header__title" href="/">{{ title }}</a></h1>
+    <h1 class="functional-header__title">
+      <span v-if="title">{{ title }}</span>
+      <slot name="title"></slot>
+    </h1>
   </div>
 </template>
 
