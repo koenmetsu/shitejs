@@ -28,12 +28,12 @@ export default class FunctionalHeader extends Vue {
 
 <style scoped>
   .functional-header {
-      margin-bottom: 0;
+    margin-bottom: 0;
   }
 
   @media screen and (max-width: 767px) {
     .functional-header--has-actions:before, .functional-header__actions {
-        display: block;
+      display: block;
     }
   }
 </style>

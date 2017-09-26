@@ -22,15 +22,16 @@ export default class FunctionalHeaderActions extends Vue {
 
 <style scoped>
   .functional-header__actions {
-      padding: 1rem .5rem 1rem;
+    padding: 1rem .5rem 1rem;
   }
 
   .functional-header__action a {
-      cursor: pointer;
+    cursor: pointer;
+    text-decoration: none;
   }
 
   .functional-header__action a:hover {
-      text-decoration: underline;
+    text-decoration: underline;
   }
 
   @media screen and (max-width: 767px) {
