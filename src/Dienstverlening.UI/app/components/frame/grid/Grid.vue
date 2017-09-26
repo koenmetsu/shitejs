@@ -22,7 +22,7 @@ export default class Grid extends Vue {
   @Prop({ default: false })
   modIsVCenter: boolean
 
-  data () {
+  data() {
     return {
       classes: {
         // Standard grid class.

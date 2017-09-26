@@ -16,7 +16,7 @@ export default class Region extends Vue {
   @Prop({ default: false })
   modIsSmall: boolean
 
-  data () {
+  data() {
     return {
       classes: {
         // Standard region class.

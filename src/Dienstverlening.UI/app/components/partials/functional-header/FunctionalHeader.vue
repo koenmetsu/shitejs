@@ -15,7 +15,7 @@ export default class FunctionalHeader extends Vue {
   @Prop({ default: false })
   modHasActions: boolean
 
-  data () {
+  data() {
     return {
       classes: {
         'functional-header': true,
@@ -25,3 +25,15 @@ export default class FunctionalHeader extends Vue {
   }
 }
 </script>
+
+<style scoped>
+  .functional-header {
+      margin-bottom: 0;
+  }
+
+  @media screen and (max-width: 767px) {
+    .functional-header--has-actions:before, .functional-header__actions {
+        display: block;
+    }
+  }
+</style>

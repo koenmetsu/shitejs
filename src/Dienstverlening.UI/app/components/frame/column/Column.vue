@@ -18,7 +18,7 @@ export default class Column extends Vue {
 
   classes: string[] = []
 
-  created () {
+  created() {
     // Possible nominators.
     const arrNoms = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
     // Possible denominators.

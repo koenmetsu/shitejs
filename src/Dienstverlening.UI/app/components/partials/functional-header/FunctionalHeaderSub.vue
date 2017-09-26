@@ -10,7 +10,7 @@ import { Component, Prop } from 'vue-property-decorator';
 
 @Component
 export default class FunctionalHeaderSub extends Vue {
-  data () {
+  data() {
     return {
       classes: {
         'functional-header__sub': true

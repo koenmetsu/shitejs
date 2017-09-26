@@ -13,7 +13,7 @@ export default class Layout extends Vue {
   @Prop({ default: false })
   modIsWide: boolean
 
-  data () {
+  data() {
     return {
       classes: {
         // Standard layout class.

@@ -24,7 +24,7 @@ export default class Tab extends Vue {
   @Prop({ default: false })
   isActive: boolean
 
-  data () {
+  data() {
     return {
       classes: {
         'tab': true,
