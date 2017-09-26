@@ -1,13 +1,11 @@
-<template v-if="!modIsFunctionalHeader">
-  <div class="tabs__wrapper">
+<template>
+  <div v-if="!modIsFunctionalHeader" class="tabs__wrapper">
     <ul :class="classes">
       <slot></slot>
     </ul>
   </div>
-</template>
 
-<template v-if="modIsFunctionalHeader">
-  <ul :class="classes" data-tabs-list>
+  <ul v-else :class="classes" data-tabs-list>
     <slot></slot>
   </ul>
 </template>

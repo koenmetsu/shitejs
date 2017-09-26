@@ -15,31 +15,7 @@
         </div>
       </div>
 
-      <div class="functional-header__content">
-        <router-link class="functional-header__title" :to="{ name: 'all-services' }">Dienstverleningsregister</router-link>
-      </div>
 
-      <div class="functional-header__sub">
-        <div class="grid">
-          <nav class="col--9-12 col--8-12--m col--1-1--s" role="navigation">
-            <ul class="functional-header__tabs tabs tabs--small tabs--left">
-              <router-link tag="li" class="tab" active-class="tab--active" exact :to="{ name: 'all-services' }">
-                <a link class="tab__link">Alle dienstverleningen</a>
-              </router-link>
-              <router-link tag="li" class="tab" active-class="tab--active" :to="{ name: 'my-services' }">
-                  <a link class="tab__link">Mijn dienstverleningen</a>
-              </router-link>
-              <router-link tag="li" class="tab" active-class="tab--active" :to="{ name: 'administration' }">
-                <a link class="tab__link">Parameters</a>
-              </router-link>
-              <router-link tag="li" class="tab" active-class="tab--active" :to="{ name: 'system' }">
-                <a link class="tab__link">Systeem</a>
-              </router-link>
-            </ul>
-          </nav>
-        </div>
-      </div>
-    </div>
   </header>
 </template>
 

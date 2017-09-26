@@ -1,6 +1,6 @@
 <template>
   <header :class="classes" role="banner">
-    <dv-layout :mod-is-wide="true">
+    <dv-layout mod-is-wide>
       <slot></slot>
     </dv-layout>
   </header>

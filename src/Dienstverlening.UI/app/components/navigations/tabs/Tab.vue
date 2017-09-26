@@ -1,9 +1,7 @@
 <template>
-  <li :class="classes">
-    <a :id="id || null" class="tab__link" :to="href">
-      {{ title }}
-    </a>
-  </li>
+  <router-link tag="li" class="tab" active-class="tab--active" :exact="exact" :to="to">
+    <a link :id="id || null" class="tab__link">{{ title }}</a>
+  </router-link>
 </template>
 
 <script lang="ts">
@@ -18,20 +16,11 @@ export default class Tab extends Vue {
   @Prop({ default: '' })
   title: string
 
-  @Prop({ default: '' })
-  href: string
+  @Prop({ required: true })
+  to: string | Location
 
   @Prop({ default: false })
-  isActive: boolean
-
-  data() {
-    return {
-      classes: {
-        'tab': true,
-        'tab--active': this.isActive
-      }
-    }
-  }
+  exact: boolean
 }
 </script>
 
