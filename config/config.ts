@@ -1,3 +1,4 @@
+// tslint:disable:object-literal-shorthand
 import * as path from 'path';
 
 const projectRoot = path.resolve(__dirname, '../src/Dienstverlening.UI');
@@ -9,7 +10,7 @@ export default {
   projectRoot: projectRoot,
   indexTemplate: path.join(projectRoot, 'index.html'),
   entryPoint: {
-    dienstverlening: path.join(projectRoot, 'app')
+    dienstverlening: path.join(projectRoot, 'app'),
   },
 
   output: path.join(wwwRoot, '[name].[hash].js'),
@@ -21,8 +22,8 @@ export default {
 
   // Remember to also update jsconfig.json
   aliases: {
-    'app': path.join(projectRoot, 'app'),
-    'components': path.join(projectRoot, 'app/components'),
-    'core': path.join(projectRoot, 'app/core'),
-  }
+    app: path.join(projectRoot, 'app'),
+    components: path.join(projectRoot, 'app/components'),
+    core: path.join(projectRoot, 'app/core'),
+  },
 };

@@ -12,22 +12,22 @@ function preHook(context: any) {
     return;
   }
   context.fileType.add('application/x-vue', /\.vue$/);
-};
+}
 
 function extract(loader: any) {
   return require('extract-text-webpack-plugin').extract({
     use: loader,
-    fallback: 'vue-style-loader'
+    fallback: 'vue-style-loader',
   });
-};
+}
 
 export default function vue(options: any) {
   const {
     exclude = /\/node_modules\//,
-    extractCSS = false
+    extractCSS = false,
   } = options || {};
 
-  const opts = (opts => {
+  const opts = ((opts) => {
     Object.keys(options || {})
       .filter(k => !['exlude', 'extractCSS'].includes(k))
       .forEach(k => opts[k] = options[k]);
@@ -39,7 +39,7 @@ export default function vue(options: any) {
     const foundCSS = CSS_EXTS.filter(e => e in opts.loaders);
 
     if (foundCSS.length) {
-      foundCSS.forEach(ext => {
+      foundCSS.forEach((ext) => {
         if (ext in opts.loaders) {
           const loader = opts.loaders[ext];
           if (extractCSS) {
@@ -54,14 +54,14 @@ export default function vue(options: any) {
     return opts;
   };
 
-  const vueBlock = (context: any, {addLoader}: any) => addLoader({
+  const vueBlock = (context: any, { addLoader }: any) => addLoader({
     test: context.fileType('application/x-vue'),
-    exclude: Array.isArray(exclude) ? exclude : [ exclude ],
+    exclude: Array.isArray(exclude) ? exclude : [exclude],
     loader: 'vue-loader',
     options: extraOptions(),
   });
 
   return Object.assign(vueBlock, {
-    pre: preHook
+    pre: preHook,
   });
-};
+}

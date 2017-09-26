@@ -13,11 +13,11 @@ export default function ts(options: any) {
     module: Object.assign(prevConfig.module || {}, {
       rules: ((prevConfig.module || {}).rules || []).concat([
         {
+          options,
           test: context.fileType('application/x-typescript'),
           loader: 'ts-loader',
-          options: options
-        }
+        },
       ]),
     }),
   });
-};
+}

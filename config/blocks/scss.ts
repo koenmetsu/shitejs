@@ -27,14 +27,14 @@ export default function scss(options: any = {}) {
           loader: 'css-loader',
           options: {
             sourceMap: Boolean(options.sourceMap),
-            minimize: options.minimize
-          }
+            minimize: options.minimize,
+          },
         },
         {
           loader: 'sass-loader',
-          options: sassOptions
-        }
-      ]
-    }, context.match)
+          options: sassOptions,
+        },
+      ],
+    }, context.match),
   );
-};
+}

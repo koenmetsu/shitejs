@@ -4,7 +4,7 @@
   "scripts": {
     "build": "cross-env TS_NODE_COMPILER_OPTIONS={\\\"module\\\":\\\"commonjs\\\"} NODE_ENV=production webpack --config config/webpack.ts",
     "start": "cross-env TS_NODE_COMPILER_OPTIONS={\\\"module\\\":\\\"commonjs\\\"} NODE_ENV=development webpack-dev-server --port 1337 --config config/webpack.ts",
-    "lint": "tslint -p tslint.json src/Dienstverlening.UI/app/**/*.ts"
+    "lint": "tslint --project tslint.json src/Dienstverlening.UI/app/**/*.ts"
   },
   "engines": {
     "node": ">= 6.0"
