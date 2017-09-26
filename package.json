@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "scripts": {
     "build": "cross-env TS_NODE_COMPILER_OPTIONS={\\\"module\\\":\\\"commonjs\\\"} NODE_ENV=production webpack --config config/webpack.ts",
-    "start": "cross-env TS_NODE_COMPILER_OPTIONS={\\\"module\\\":\\\"commonjs\\\"} NODE_ENV=development webpack-dev-server --port 1337 --config config/webpack.ts"
+    "start": "cross-env TS_NODE_COMPILER_OPTIONS={\\\"module\\\":\\\"commonjs\\\"} NODE_ENV=development webpack-dev-server --port 1337 --config config/webpack.ts",
+    "lint": "tslint -p tslint.json src/Dienstverlening.UI/app/**/*.ts"
   },
   "engines": {
     "node": ">= 6.0"
@@ -50,6 +51,7 @@
     "ts-loader": "2.3.7",
     "ts-node": "3.3.0",
     "tslint": "5.7.0",
+    "tslint-config-airbnb": "5.3.0",
     "tslint-loader": "3.5.3",
     "typescript": "2.5.2",
     "uglifyjs-webpack-plugin": "1.0.0-beta.2",
