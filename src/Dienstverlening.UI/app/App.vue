@@ -3,7 +3,8 @@
     <dv-header />
 
     <dv-functional-header :mod-has-actions="true">
-      <dv-functional-header-content title="DIENSTVERLENINGSREGISTER" />
+      <dv-functional-header-actions :actions="actions" />
+      <dv-functional-header-content :title="title" />
       <dv-functional-header-sub>
         <dv-grid>
           <dv-column type="nav"
@@ -47,6 +48,7 @@ import dvRegion from 'components/frame/region/Region.vue';
 import dvFunctionalHeader from 'components/partials/functional-header/FunctionalHeader.vue';
 import dvFunctionalHeaderContent from 'components/partials/functional-header/FunctionalHeaderContent.vue';
 import dvFunctionalHeaderSub from 'components/partials/functional-header/FunctionalHeaderSub.vue';
+import dvFunctionalHeaderActions from 'components/partials/functional-header/FunctionalHeaderActions.vue';
 import dvTabs from 'components/navigations/tabs/Tabs.vue';
 import dvTab from 'components/navigations/tabs/Tab.vue';
 
@@ -61,6 +63,7 @@ import dvFooter from 'components/footer/Footer.vue';
     dvFunctionalHeader,
     dvFunctionalHeaderContent,
     dvFunctionalHeaderSub,
+    dvFunctionalHeaderActions,
     dvTabs,
     dvTab,
 
@@ -70,6 +73,12 @@ import dvFooter from 'components/footer/Footer.vue';
   }
 })
 export default class Dienstverlening extends Vue {
+  title: string = "DIENSTVERLENINGSREGISTER"
+
+  actions = [
+    { title: 'John Admin (Beheerder | Ontwikkelaar)' },
+    { title: 'Meld af', to: '/logout' },
+  ]
 }
 </script>
 
