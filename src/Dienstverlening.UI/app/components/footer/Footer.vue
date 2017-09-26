@@ -28,9 +28,9 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import Component from 'vue-class-component';
+import { Component } from 'vue-property-decorator';
 
-@Component({})
+@Component
 export default class Footer extends Vue {
   mounted() {
     this.setVersion();

@@ -11,9 +11,9 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import Component from 'vue-class-component';
+import { Component } from 'vue-property-decorator';
 
-@Component({})
+@Component
 export default class Header extends Vue {
 }
 </script>
@@ -28,7 +28,6 @@ export default class Header extends Vue {
     font-size: 16px;
     font-family: flanders-sans;
     -webkit-text-size-adjust: none;
-    -webkit-font-smoothing: antialiased!important;
     font-smoothing: antialiased!important;
     text-rendering: optimizeLegibility;
   }
