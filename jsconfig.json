@@ -4,6 +4,7 @@
     "baseUrl": "./src/Dienstverlening.UI/app/",
     "paths": {
       "app/*": ["./src/Dienstverlening.UI/app/*"],
+      "components/*": ["./src/Dienstverlening.UI/app/components/*"],
       "core/*": ["./src/Dienstverlening.UI/app/core/*"]
     }
   },

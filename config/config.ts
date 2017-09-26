@@ -19,8 +19,10 @@ export default {
   index: isProduction ? path.join(wwwRoot, 'index.html') : 'index.html',
   assetsDirectory: 'static',
 
+  // Remember to also update jsconfig.json
   aliases: {
     'app': path.join(projectRoot, 'app'),
+    'components': path.join(projectRoot, 'app/components'),
     'core': path.join(projectRoot, 'app/core'),
   }
 };
