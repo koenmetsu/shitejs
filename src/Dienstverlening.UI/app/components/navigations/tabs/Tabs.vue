@@ -1,0 +1,34 @@
+<template v-if="!modIsFunctionalHeader">
+  <div class="tabs__wrapper">
+    <ul :class="classes">
+      <slot></slot>
+    </ul>
+  </div>
+</template>
+
+<template v-if="modIsFunctionalHeader">
+  <ul :class="classes" data-tabs-list>
+    <slot></slot>
+  </ul>
+</template>
+
+<script lang="ts">
+import Vue from 'vue';
+import { Component, Prop } from 'vue-property-decorator';
+
+@Component
+export default class Tabs extends Vue {
+  @Prop({ default: false })
+  modIsFunctionalHeader: boolean
+
+  data () {
+    return {
+      classes: {
+        'tabs': true,
+
+        'tabs--block': this.modIsFunctionalHeader,
+      }
+    }
+  }
+}
+</script>

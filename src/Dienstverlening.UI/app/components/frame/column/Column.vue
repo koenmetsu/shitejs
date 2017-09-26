@@ -16,13 +16,7 @@ export default class Column extends Vue {
   @Prop({ default: 'div' })
   type: string
 
-  classes: string[];
-
-  data () {
-    return {
-      classes: []
-    }
-  }
+  classes: string[] = []
 
   created () {
     // Possible nominators.
