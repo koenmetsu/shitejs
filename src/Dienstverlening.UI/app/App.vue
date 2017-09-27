@@ -5,8 +5,7 @@
     <dv-functional-header mod-has-actions>
       <dv-functional-header-actions>
         <dv-functional-header-action title="John Admin (Beheerder | Ontwikkelaar)" />
-        <dv-functional-header-action title="Afmelden" :to="{ name: 'my-services' }" />
-        <dv-functional-header-action title="Afmelden" to="/systeem" />
+        <dv-functional-header-action title="Afmelden" :on="logoutClicked" />
       </dv-functional-header-actions>
 
       <dv-functional-header-content>
@@ -77,6 +76,10 @@ import dvFooter from 'components/partials/footer/Footer.vue';
 })
 export default class Dienstverlening extends Vue {
   title: string = "DIENSTVERLENINGSREGISTER"
+
+  logoutClicked(e: any) {
+    console.log('Logout!', e);
+  }
 }
 </script>
 

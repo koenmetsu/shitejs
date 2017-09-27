@@ -1,6 +1,6 @@
 <template >
   <li v-if="to" class="functional-header__action"><router-link :to="to">{{ title }}</router-link></li>
-  <li v-else-if="on" class="functional-header__action"><a v-on:click="on">{{ title }}</a></li>
+  <li v-else-if="on" class="functional-header__action"><a tabindex="0" v-on:click="on" v-on:keyup.enter="on">{{ title }}</a></li>
   <li v-else class="functional-header__action">{{ title }}</li>
 </template>
 
