@@ -6,8 +6,9 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import { Component, Prop } from 'vue-property-decorator';
 import { Location } from 'vue-router';
+import { Component, Prop } from 'vue-property-decorator';
+import { isLocation, isString } from 'core/helpers';
 
 @Component
 export default class FunctionalHeaderAction extends Vue {
@@ -17,7 +18,7 @@ export default class FunctionalHeaderAction extends Vue {
   @Prop({
     default: null,
     type: [String, Object],
-    //validator: to => false
+    validator: to => isString(to) || isLocation(to)
   })
   to: string | Location
 

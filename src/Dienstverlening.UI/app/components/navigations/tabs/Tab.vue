@@ -8,6 +8,7 @@
 import Vue from 'vue';
 import { Location } from 'vue-router';
 import { Component, Prop } from 'vue-property-decorator';
+import { isLocation, isString } from 'core/helpers';
 
 @Component
 export default class Tab extends Vue {
@@ -17,7 +18,11 @@ export default class Tab extends Vue {
   @Prop({ required: true })
   title: string
 
-  @Prop({ required: true, type: [String, Object] })
+  @Prop({
+    required: true,
+    type: [String, Object],
+    validator: to => isString(to) || isLocation(to)
+  })
   to: string | Location
 
   @Prop({ default: false })
