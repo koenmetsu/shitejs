@@ -6,6 +6,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
+import { Location } from 'vue-router';
 import { Component, Prop } from 'vue-property-decorator';
 
 @Component
@@ -13,10 +14,10 @@ export default class Tab extends Vue {
   @Prop({ default: '' })
   id: string
 
-  @Prop({ default: '' })
+  @Prop({ required: true })
   title: string
 
-  @Prop({ required: true })
+  @Prop({ required: true, type: [String, Object] })
   to: string | Location
 
   @Prop({ default: false })
@@ -25,9 +26,9 @@ export default class Tab extends Vue {
 </script>
 
 <style scoped>
-.tab .tab__link {
-  white-space: nowrap;
-  padding: 1.2rem 1.1rem 1.2rem 1.1rem;
-  margin-right: 1px;
-}
+  .tab .tab__link {
+    white-space: nowrap;
+    padding: 1.2rem 1.1rem 1.2rem 1.1rem;
+    margin-right: 1px;
+  }
 </style>

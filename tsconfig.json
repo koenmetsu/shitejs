@@ -32,5 +32,8 @@
     "suppressImplicitAnyIndexErrors": true,
     "allowSyntheticDefaultImports": true,
     "baseUrl": "./src/Dienstverlening.UI/app/"
-  }
+  },
+  "exclude": [
+    "assets"
+  ]
 }

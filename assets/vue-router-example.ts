@@ -1,8 +1,9 @@
-import Vue = require("vue");
+// tslint:disable
+import Vue from "vue";
 import { ComponentOptions } from "vue";
 
-import VueRouter = require("../index");
-import { Route, RouteRecord, RedirectOption } from "../index";
+import VueRouter from "vue-router";
+import { Route, RouteRecord, RedirectOption } from "vue-router";
 
 Vue.use(VueRouter);
 

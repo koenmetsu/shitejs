@@ -5,7 +5,8 @@
     <dv-functional-header mod-has-actions>
       <dv-functional-header-actions>
         <dv-functional-header-action title="John Admin (Beheerder | Ontwikkelaar)" />
-        <dv-functional-header-action title="Afmelden" to="/logout" />
+        <dv-functional-header-action title="Afmelden" :to="{ name: 'my-services' }" />
+        <dv-functional-header-action title="Afmelden" to="/systeem" />
       </dv-functional-header-actions>
 
       <dv-functional-header-content>
@@ -44,6 +45,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
+import { Location } from 'vue-router';
 import { Component } from 'vue-property-decorator';
 
 import dvMain from 'components/frame/main/Main.vue';
